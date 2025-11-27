@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Densford Artist Dashboard</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #0b1220;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: left;
+      margin-bottom: 25px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .header span {
+      font-size: 14px;
+      opacity: 0.7;
+    }
+
+    .card {
+      background: #141d33;
+      padding: 18px;
+      border-radius: 14px;
+      margin-bottom: 18px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .card h3 {
+      margin: 0 0 8px 0;
+      font-size: 17px;
+      opacity: 0.85;
+    }
+
+    .info {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .label {
+      font-size: 13px;
+      opacity: 0.7;
+    }
+
+    .release-item {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .release-title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .release-date {
+      font-size: 13px;
+      opacity: 0.7;
+    }
+
+    .button {
+      display: inline-block;
+      background: #1b4fff;
+      padding: 10px 18px;
+      border-radius: 10px;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    .progress {
+      height: 10px;
+      border-radius: 10px;
+      background: #223;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #1b4fff, #02d6ff);
+      width: 70%;
+    }
+
+    .logout {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .logout a {
+      color: #ff4d4d;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <h1>Densford Artist Dashboard</h1>
+    <span>Overview · Releases · Platforms</span>
+  </div>
+
+  <!-- Total Streams -->
+  <div class="card">
+    <h3>Total Streams (All-time)</h3>
+    <div class="info">37,000</div>
+    <div class="label">Top Track: Sunset Drive</div>
+  </div>
+
+  <!-- Active Platforms -->
+  <div class="card">
+    <h3>Active Platforms</h3>
+    <div class="info">4</div>
+    <div class="label">Most Used: Spotify</div>
+
+    <div style="margin-top: 10px; font-size: 13px; opacity: 0.8;">
+      Spotify
+      <div class="progress"><div class="progress-bar" style="width: 80%;"></div></div>
+
+      Apple Music
+      <div class="progress"><div class="progress-bar" style="width: 55%;"></div></div>
+
+      YouTube Music
+      <div class="progress"><div class="progress-bar" style="width: 45%;"></div></div>
+
+      TikTok
+      <div class="progress"><div class="progress-bar" style="width: 30%;"></div></div>
+    </div>
+  </div>
+
+  <!-- Releases -->
+  <div class="card">
+    <h3>Your Releases</h3>
+
+    <div class="release-item">
+      <div class="release-title">Sunset Drive</div>
+      <div class="release-date">Released: 2025-01-10</div>
+    </div>
+
+    <div class="release-item">
+      <div class="release-title">Midnight Echo</div>
+      <div class="release-date">Released: 2024-09-02</div>
+    </div>
+
+    <div class="release-item">
+      <div class="release-title">Ocean Eyes Cover</div>
+      <div class="release-date">Released: 2024-06-21</div>
+    </div>
+
+    <a class="button" href="#">Upload New Release</a>
+  </div>
+
+  <div class="logout">
+    <a href="login.html">Logout</a>
+  </div>
+
+</body>
+</html>
