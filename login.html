@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Densford Artist Login</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #0e1625;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+      color: white;
+    }
+
+    .box {
+      width: 100%;
+      max-width: 350px;
+      background: #fff;
+      color: #000;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    }
+
+    h2 {
+      margin-top: 0;
+      text-align: center;
+      color: #0e1625;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #bbb;
+      margin-top: 12px;
+      font-size: 15px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #122f70;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      margin-top: 18px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .error {
+      margin-top: 12px;
+      color: #b40000;
+      text-align: center;
+      font-weight: 600;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <h2>Densford Login</h2>
+
+    <input id="email" type="email" placeholder="Email">
+    <input id="pass" type="password" placeholder="Password">
+
+    <button class="btn" onclick="login()">LOGIN</button>
+
+    <div class="error" id="errorBox">
+      Wrong Password/Email — Please contact our Customer Service
+    </div>
+  </div>
+
+  <script>
+    // ======== SETTING LOGIN DISINI ========
+    const VALID_USERS = [
+      { email: "contact@radityaramadhan.com", pass: "densford123" },
+      { email: "artist1@densford.com", pass: "password123" }
+    ];
+
+    // URL dashboard kamu setelah login
+    const DASHBOARD_URL = "https://YOUR_USERNAME.github.io/YOUR_REPO/dashboard.html";
+    // (nanti aku bantu ganti setelah GitHub Pages aktif)
+
+    function login() {
+      let email = document.getElementById("email").value.toLowerCase().trim();
+      let pass  = document.getElementById("pass").value.trim();
+
+      let allowed = VALID_USERS.some(u => u.email === email && u.pass === pass);
+
+      if (allowed) {
+        window.location.href = DASHBOARD_URL + "?user=" + encodeURIComponent(email);
+      } else {
+        document.getElementById("errorBox").style.display = "block";
+        setTimeout(() => {
+          document.getElementById("errorBox").style.display = "none";
+        }, 5000);
+      }
+    }
+  </script>
+
+</body>
+</html>
